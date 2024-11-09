@@ -26,7 +26,7 @@ public class RespiratoryRateService {
         respiratoryRateRepository.save(rrData);
     }
 
-    public List<RespiratoryRateData> getRespiratoryRateData(String patientId, Instant start, Instant end) {
+    public List<RespiratoryRateData> getAllRespiratoryRateDataByDateRange(String patientId, Instant start, Instant end) {
         return respiratoryRateRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 
