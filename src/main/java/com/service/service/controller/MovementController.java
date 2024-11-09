@@ -38,7 +38,7 @@ public class MovementController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<MovementData> movementDataList = movementService.getMovementData(patientId, start, end);
+        List<MovementData> movementDataList = movementService.getAllMovementDataByDateRange(patientId, start, end);
         return movementDataMapper.toDTOList(movementDataList);
     }
 

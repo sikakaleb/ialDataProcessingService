@@ -26,7 +26,7 @@ public class MovementService {
         movementRepository.save(movementData);
     }
 
-    public List<MovementData> getAllRespiratoryRateDataByDateRange(String patientId, Instant start, Instant end) {
+    public List<MovementData> getAllMovementDataByDateRange(String patientId, Instant start, Instant end) {
         return movementRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 
