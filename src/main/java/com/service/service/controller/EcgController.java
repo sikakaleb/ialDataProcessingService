@@ -38,7 +38,7 @@ public class EcgController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<EcgData> ecgDataList = ecgService.getEcgData(patientId, start, end);
+        List<EcgData> ecgDataList = ecgService.getAllEcgDataByDateRange(patientId, start, end);
         return ecgDataMapper.toDTOList(ecgDataList);
     }
 

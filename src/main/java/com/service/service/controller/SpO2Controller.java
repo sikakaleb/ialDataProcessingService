@@ -38,7 +38,7 @@ public class SpO2Controller {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<SpO2Data> spO2DataList = spO2Service.getSpO2Data(patientId, start, end);
+        List<SpO2Data> spO2DataList = spO2Service.getAllSpO2DataByDateRange(patientId, start, end);
         return spO2DataMapper.toDTOList(spO2DataList);
     }
     @GetMapping("/data/{patientId}")

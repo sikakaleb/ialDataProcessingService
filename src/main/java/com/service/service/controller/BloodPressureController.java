@@ -39,7 +39,7 @@ public class BloodPressureController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<BloodPressureData> bloodPressureDataList = bloodPressureService.getBloodPressureData(patientId, start, end);
+        List<BloodPressureData> bloodPressureDataList = bloodPressureService.getAllBloodPressureDataByDateRange(patientId, start, end);
         return bloodPressureDataMapper.toDTOList(bloodPressureDataList);
     }
     @GetMapping("/data/{patientId}")

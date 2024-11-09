@@ -27,6 +27,6 @@ public class PatientDataController {
             @RequestParam Instant startTime,
             @RequestParam Instant endTime) {
 
-        return patientDataService.getAllDataByPatientIdAndTimeRange(patientId, startTime, endTime);
+        return patientDataService.getAllDataByPatientIdAndDateRange(patientId, startTime, endTime);
     }
 }

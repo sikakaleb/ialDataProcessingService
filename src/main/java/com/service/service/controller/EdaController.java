@@ -38,7 +38,7 @@ public class EdaController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<EdaData> edaDataList = edaService.getEdaData(patientId, start, end);
+        List<EdaData> edaDataList = edaService.getAllEdaDataByDateRange(patientId, start, end);
         return edaDataMapper.toDTOList(edaDataList);
     }
 
