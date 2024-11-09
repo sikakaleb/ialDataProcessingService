@@ -26,7 +26,7 @@ public class EdaService {
         edaDataRepository.save(edaData);
     }
 
-    public List<EdaData> getEdaData(String patientId, Instant start, Instant end) {
+    public List<EdaData> getAllEdaDataByDateRange(String patientId, Instant start, Instant end) {
         return edaDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 

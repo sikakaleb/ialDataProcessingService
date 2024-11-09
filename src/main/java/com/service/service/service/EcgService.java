@@ -26,7 +26,7 @@ public class EcgService {
         ecgDataRepository.save(ecgData);
     }
 
-    public List<EcgData> getEcgData(String patientId, Instant start, Instant end) {
+    public List<EcgData> getAllEcgDataByDateRange(String patientId, Instant start, Instant end) {
         return ecgDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 
