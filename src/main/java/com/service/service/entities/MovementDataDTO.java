@@ -16,4 +16,28 @@ public class MovementDataDTO {
         private float y; // Accélération sur l'axe Y
         private float z; // Accélération sur l'axe Z
     }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public List<AccelerationData> getAccelerationValues() {
+        return accelerationValues;
+    }
+
+    public void setAccelerationValues(List<AccelerationData> accelerationValues) {
+        this.accelerationValues = accelerationValues;
+    }
 }
