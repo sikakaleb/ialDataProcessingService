@@ -16,7 +16,7 @@ services:
       - "8080:8080"
       - "35729:35729"
     environment:
-      - SPRING_DATA_MONGODB_URI=spring.data.mongodb.uri=mongodb+srv://kalebsika23:YrOmqCuQtBJCpLmE@ialcluster.vazkx.mongodb.net/dataProcessingServiceDB_dev?retryWrites=true&w=majority
+      - SPRING_DATA_MONGODB_URI=${SPRING_DATA_MONGODB_URI}
 
     depends_on:
       - mongo
