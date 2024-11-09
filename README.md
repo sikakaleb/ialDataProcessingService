@@ -73,7 +73,7 @@ Chaque type de donnée possède un DTO (Data Transfer Object) spécifique pour g
 - **Gestion des Données** :
     - Les données sont transmises sous forme JSON, incluant des informations comme l'ID du patient, le type de capteur, l'horodatage et les valeurs mesurées. Cela facilite la gestion des données pour les différents capteurs.
 
-- **Traitement** : Le traitement des alertes et le filtrage sont gérés par un autre microservice dédié, permettant à `DataProcessingService` de se concentrer sur l'ingestion et le stockage des données.
+- **Traitement** : Le traitement des alertes et le filtrage sont gérés par un autre microservice dédié, permettant à `DataProcessingService` de se concentrer sur l'ingestion aux autres services et le stockage des données.
 
 ## Modifier la Base de Données
 
