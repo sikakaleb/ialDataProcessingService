@@ -26,7 +26,7 @@ public class EmgService {
         emgDataRepository.save(emgData);
     }
 
-    public List<EmgData> getEmgData(String patientId, Instant start, Instant end) {
+    public List<EmgData> getAllEmgDataByDateRange(String patientId, Instant start, Instant end) {
         return emgDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
     public List<EmgData> getAllEmgData(String patientId) {

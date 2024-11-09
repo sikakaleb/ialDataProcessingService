@@ -26,7 +26,7 @@ public class TemperatureService {
         temperatureRepository.save(temperatureData);
     }
 
-    public List<TemperatureData> getTemperatureData(String patientId, Instant start, Instant end) {
+    public List<TemperatureData> getAllTemperatureDataByDateRange(String patientId, Instant start, Instant end) {
         return temperatureRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
     public List<TemperatureData> getAllTemperatureData(String patientId) {

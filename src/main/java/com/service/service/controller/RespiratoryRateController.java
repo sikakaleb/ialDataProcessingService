@@ -38,7 +38,7 @@ public class RespiratoryRateController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<RespiratoryRateData> respiratoryRateDataList = respiratoryRateService.getRespiratoryRateData(patientId, start, end);
+        List<RespiratoryRateData> respiratoryRateDataList = respiratoryRateService.getAllRespiratoryRateDataByDateRange(patientId, start, end);
         return respiratoryRateDataMapper.toDTOList(respiratoryRateDataList);
     }
 

@@ -26,7 +26,7 @@ public class SpO2Service {
         spO2Repository.save(spO2Data);
     }
 
-    public List<SpO2Data> getSpO2Data(String patientId, Instant start, Instant end) {
+    public List<SpO2Data> getAllSpO2DataByDateRange(String patientId, Instant start, Instant end) {
         return spO2Repository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 

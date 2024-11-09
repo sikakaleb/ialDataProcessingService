@@ -27,7 +27,7 @@ public class BloodPressureService {
         bloodPressureRepository.save(bpData);
     }
 
-    public List<BloodPressureData> getBloodPressureData(String patientId, Instant start, Instant end) {
+    public List<BloodPressureData> getAllBloodPressureDataByDateRange(String patientId, Instant start, Instant end) {
         return bloodPressureRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
     public List<BloodPressureData> getAllBloodPressureData(String patientId) {

@@ -38,7 +38,7 @@ public class EmgController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<EmgData> emgDataList = emgService.getEmgData(patientId, start, end);
+        List<EmgData> emgDataList = emgService.getAllEmgDataByDateRange(patientId, start, end);
         return emgDataMapper.toDTOList(emgDataList);
     }
 

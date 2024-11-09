@@ -38,7 +38,7 @@ public class TemperatureController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<TemperatureData> temperatureDataList = temperatureService.getTemperatureData(patientId, start, end);
+        List<TemperatureData> temperatureDataList = temperatureService.getAllTemperatureDataByDateRange(patientId, start, end);
         return temperatureDataMapper.toDTOList(temperatureDataList);
     }
     @GetMapping("/data/{patientId}")

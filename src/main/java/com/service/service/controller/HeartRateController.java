@@ -38,7 +38,7 @@ public class HeartRateController {
             @PathVariable String patientId,
             @RequestParam Instant start,
             @RequestParam Instant end) {
-        List<HeartRateData> heartRateDataList = heartRateService.getHeartRateData(patientId, start, end);
+        List<HeartRateData> heartRateDataList = heartRateService.getAllHeartRateDataByDateRange(patientId, start, end);
         return heartRateDataMapper.toDTOList(heartRateDataList);
     }
 

@@ -26,7 +26,7 @@ public class HeartRateService {
         heartRateRepository.save(heartRateData);
     }
 
-    public List<HeartRateData> getHeartRateData(String patientId, Instant start, Instant end) {
+    public List<HeartRateData> getAllHeartRateDataByDateRange(String patientId, Instant start, Instant end) {
         return heartRateRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
 
