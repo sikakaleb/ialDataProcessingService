@@ -41,4 +41,10 @@ public class TemperatureController {
         List<TemperatureData> temperatureDataList = temperatureService.getTemperatureData(patientId, start, end);
         return temperatureDataMapper.toDTOList(temperatureDataList);
     }
+    @GetMapping("/data/{patientId}")
+    public List<TemperatureDataDTO> getAllTemperatureData(@PathVariable String patientId) {
+        List<TemperatureData> temperatureDataList = temperatureService.getAllTemperatureData(patientId);
+        return temperatureDataMapper.toDTOList(temperatureDataList);
+    }
+
 }

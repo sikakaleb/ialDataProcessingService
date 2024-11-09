@@ -41,5 +41,14 @@ public class RespiratoryRateController {
         List<RespiratoryRateData> respiratoryRateDataList = respiratoryRateService.getRespiratoryRateData(patientId, start, end);
         return respiratoryRateDataMapper.toDTOList(respiratoryRateDataList);
     }
+
+    @GetMapping("/data/{patientId}")
+    public List<RespiratoryRateDataDTO> getAllRespiratoryRateData(@PathVariable String patientId) {
+        List<RespiratoryRateData> respiratoryRateDataList = respiratoryRateService.getAllRespiratoryRateData(patientId);
+        return respiratoryRateDataMapper.toDTOList(respiratoryRateDataList);
+    }
+
+
+
 }
 

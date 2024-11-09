@@ -42,4 +42,10 @@ public class BloodPressureController {
         List<BloodPressureData> bloodPressureDataList = bloodPressureService.getBloodPressureData(patientId, start, end);
         return bloodPressureDataMapper.toDTOList(bloodPressureDataList);
     }
+    @GetMapping("/data/{patientId}")
+    public List<BloodPressureDataDTO> getAllBloodPressureData(@PathVariable String patientId) {
+        List<BloodPressureData> bloodPressureDataList = bloodPressureService.getAllBloodPressureData(patientId);
+        return bloodPressureDataMapper.toDTOList(bloodPressureDataList);
+    }
+
 }

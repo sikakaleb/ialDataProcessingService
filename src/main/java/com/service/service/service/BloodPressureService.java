@@ -30,4 +30,8 @@ public class BloodPressureService {
     public List<BloodPressureData> getBloodPressureData(String patientId, Instant start, Instant end) {
         return bloodPressureRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+    public List<BloodPressureData> getAllBloodPressureData(String patientId) {
+        return bloodPressureRepository.findByPatientId(patientId);
+    }
+
 }

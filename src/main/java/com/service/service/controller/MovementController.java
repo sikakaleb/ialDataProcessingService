@@ -41,4 +41,11 @@ public class MovementController {
         List<MovementData> movementDataList = movementService.getMovementData(patientId, start, end);
         return movementDataMapper.toDTOList(movementDataList);
     }
+
+    @GetMapping("/data/{patientId}")
+    public List<MovementDataDTO> getAllMovementData(@PathVariable String patientId) {
+        List<MovementData> movementDataList = movementService.getAllMovementData(patientId);
+        return movementDataMapper.toDTOList(movementDataList);
+    }
+
 }

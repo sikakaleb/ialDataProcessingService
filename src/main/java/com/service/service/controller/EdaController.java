@@ -41,4 +41,11 @@ public class EdaController {
         List<EdaData> edaDataList = edaService.getEdaData(patientId, start, end);
         return edaDataMapper.toDTOList(edaDataList);
     }
+
+    @GetMapping("/data/{patientId}")
+    public List<EdaDataDTO> getAllEdaData(@PathVariable String patientId) {
+        List<EdaData> edaDataList = edaService.getAllEdaData(patientId);
+        return edaDataMapper.toDTOList(edaDataList);
+    }
+
 }

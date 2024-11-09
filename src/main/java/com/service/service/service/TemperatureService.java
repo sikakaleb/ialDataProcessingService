@@ -29,4 +29,9 @@ public class TemperatureService {
     public List<TemperatureData> getTemperatureData(String patientId, Instant start, Instant end) {
         return temperatureRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+    public List<TemperatureData> getAllTemperatureData(String patientId) {
+        return temperatureRepository.findByPatientId(patientId);
+    }
+
+
 }

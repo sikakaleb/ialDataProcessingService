@@ -29,5 +29,10 @@ public class EdaService {
     public List<EdaData> getEdaData(String patientId, Instant start, Instant end) {
         return edaDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<EdaData> getAllEdaData(String patientId) {
+        return edaDataRepository.findByPatientId(patientId);
+    }
+
 }
 

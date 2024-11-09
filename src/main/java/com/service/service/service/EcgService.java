@@ -29,4 +29,8 @@ public class EcgService {
     public List<EcgData> getEcgData(String patientId, Instant start, Instant end) {
         return ecgDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<EcgData> getAllEcgData(String patientId) {
+        return ecgDataRepository.findByPatientId(patientId);
+    }
 }

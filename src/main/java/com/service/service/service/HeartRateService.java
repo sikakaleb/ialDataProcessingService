@@ -29,4 +29,8 @@ public class HeartRateService {
     public List<HeartRateData> getHeartRateData(String patientId, Instant start, Instant end) {
         return heartRateRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<HeartRateData> getAllHeartRateData(String patientId) {
+        return heartRateRepository.findByPatientId(patientId);
+    }
 }

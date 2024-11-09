@@ -29,4 +29,9 @@ public class MovementService {
     public List<MovementData> getMovementData(String patientId, Instant start, Instant end) {
         return movementRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<MovementData> getAllMovementData(String patientId) {
+        return movementRepository.findByPatientId(patientId);
+    }
+
 }

@@ -41,4 +41,10 @@ public class SpO2Controller {
         List<SpO2Data> spO2DataList = spO2Service.getSpO2Data(patientId, start, end);
         return spO2DataMapper.toDTOList(spO2DataList);
     }
+    @GetMapping("/data/{patientId}")
+    public List<SpO2DataDTO> getAllSpO2Data(@PathVariable String patientId) {
+        List<SpO2Data> spO2DataList = spO2Service.getAllSpO2Data(patientId);
+        return spO2DataMapper.toDTOList(spO2DataList);
+    }
+
 }

@@ -41,4 +41,11 @@ public class EmgController {
         List<EmgData> emgDataList = emgService.getEmgData(patientId, start, end);
         return emgDataMapper.toDTOList(emgDataList);
     }
+
+    @GetMapping("/data/{patientId}")
+    public List<EmgDataDTO> getAllEmgData(@PathVariable String patientId) {
+        List<EmgData> emgDataList = emgService.getAllEmgData(patientId);
+        return emgDataMapper.toDTOList(emgDataList);
+    }
+
 }

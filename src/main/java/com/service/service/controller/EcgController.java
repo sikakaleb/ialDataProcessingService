@@ -41,4 +41,11 @@ public class EcgController {
         List<EcgData> ecgDataList = ecgService.getEcgData(patientId, start, end);
         return ecgDataMapper.toDTOList(ecgDataList);
     }
+
+    // Endpoint pour récupérer toutes les données ECG pour un patient
+    @GetMapping("/data/{patientId}")
+    public List<EcgDataDTO> getAllEcgData(@PathVariable String patientId) {
+        List<EcgData> ecgDataList = ecgService.getAllEcgData(patientId);
+        return ecgDataMapper.toDTOList(ecgDataList);
+    }
 }

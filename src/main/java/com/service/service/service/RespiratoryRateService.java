@@ -29,4 +29,9 @@ public class RespiratoryRateService {
     public List<RespiratoryRateData> getRespiratoryRateData(String patientId, Instant start, Instant end) {
         return respiratoryRateRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<RespiratoryRateData> getAllRespiratoryRateData(String patientId) {
+        return respiratoryRateRepository.findByPatientId(patientId);
+    }
+
 }

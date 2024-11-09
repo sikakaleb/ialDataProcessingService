@@ -29,4 +29,9 @@ public class SpO2Service {
     public List<SpO2Data> getSpO2Data(String patientId, Instant start, Instant end) {
         return spO2Repository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+
+    public List<SpO2Data> getAllSpO2Data(String patientId) {
+        return spO2Repository.findByPatientId(patientId);
+    }
+
 }

@@ -29,4 +29,8 @@ public class EmgService {
     public List<EmgData> getEmgData(String patientId, Instant start, Instant end) {
         return emgDataRepository.findByPatientIdAndRecordedAtBetween(patientId, start, end);
     }
+    public List<EmgData> getAllEmgData(String patientId) {
+        return emgDataRepository.findByPatientId(patientId);
+    }
+
 }

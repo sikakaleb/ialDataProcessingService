@@ -41,4 +41,11 @@ public class HeartRateController {
         List<HeartRateData> heartRateDataList = heartRateService.getHeartRateData(patientId, start, end);
         return heartRateDataMapper.toDTOList(heartRateDataList);
     }
+
+    // Endpoint pour récupérer toutes les données de fréquence cardiaque pour un patient
+    @GetMapping("/data/{patientId}")
+    public List<HeartRateDataDTO> getAllHeartRateData(@PathVariable String patientId) {
+        List<HeartRateData> heartRateDataList = heartRateService.getAllHeartRateData(patientId);
+        return heartRateDataMapper.toDTOList(heartRateDataList);
+    }
 }
