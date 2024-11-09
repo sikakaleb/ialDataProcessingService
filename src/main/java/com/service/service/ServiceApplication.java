@@ -21,12 +21,20 @@ public class ServiceApplication {
 		String activeProfile = dotenv.get("SPRING_PROFILES_ACTIVE", "dev");
 		System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, activeProfile);
 
-		String mongoUri = dotenv.get("SPRING_DATA_MONGODB_URI");
+		// Sélectionnez l'URI MongoDB selon le profil actif
+		String mongoUri;
+		if ("dev".equals(activeProfile)) {
+			logger.info("URI MongoDB pour le profil {} chargé ", activeProfile);
+			mongoUri = dotenv.get("SPRING_DATA_MONGODB_URI");
+		} else {
+			mongoUri = dotenv.get("SPRING_DATA_MONGODB_URI");
+		}
+
 		if (mongoUri != null && !mongoUri.isEmpty()) {
 			System.setProperty("spring.data.mongodb.uri", mongoUri);
-			logger.info("URI MongoDB chargé avec succès : {}", mongoUri);
+			logger.info("URI MongoDB pour le profil {} chargé : {}", activeProfile, mongoUri);
 		} else {
-			logger.warn("URI MongoDB non défini dans le fichier .env !");
+			logger.warn("URI MongoDB non défini dans le fichier .env pour le profil {}", activeProfile);
 		}
 
 		SpringApplication.run(ServiceApplication.class, args);
