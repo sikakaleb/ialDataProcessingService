@@ -25,6 +25,7 @@ services:
       - ./pom.xml:/app/pom.xml
       - ./mvnw:/app/mvnw
       - ./.mvn:/app/.mvn
+      - ./.env:/app/.env
 
 volumes:
   mongo_data:
